@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nimda
+  labels:
+    app: nimda
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nimda
+  template:
+    metadata:
+      labels:
+        app: nimda
+    spec:
+      containers:
+        - name: nimda
+          image: public.ecr.aws/y4l4r1h0/nimda/nimda:1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPorts: 8080
