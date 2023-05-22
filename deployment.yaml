@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nimda
-          image: public.ecr.aws/y4l4r1h0/nimda/nimda:1.1
+          image: 185813569261.dkr.ecr.us-east-2.amazonaws.com/nimda/nimda:1.1
           imagePullPolicy: Always
           ports:
-            - containerPorts: 80
+            - containerPort: 80
