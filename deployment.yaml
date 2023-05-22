@@ -19,4 +19,4 @@ spec:
           image: public.ecr.aws/y4l4r1h0/nimda/nimda:1.1
           imagePullPolicy: Always
           ports:
-            - containerPorts: 8080
+            - containerPorts: 80
