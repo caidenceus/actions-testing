@@ -28,10 +28,9 @@ jobs:
       - name: Build, tag, and push docker image to ECR
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: nimda
+          REPOSITORY: ${{ secrets.ECR_PRIVATE_REPO }}
           IMAGE_TAG: 1.1
         run: |
-          echo "${{ toJSON(steps.login-ecr.outputs) }}"
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
